@@ -2,7 +2,7 @@
 
 > Why does this repo exist?
 
-Liked the original idea of a stable neovim config that I could use for work as well as my own projects. However wanted to have my own colour scheme, laysout, a few more keymaps and a few extra plugins. Goal is, at least initially for use as a python, javascript, svelte and rust IDE. 
+Liked the original idea of a stable neovim config that I could use for work as well as my own projects. However wanted to have my own colour scheme, layout, a few more keymaps and a few extra plugins. Goal is, at least initially for use as a python, javascript, svelte and rust IDE. 
 
 
 
