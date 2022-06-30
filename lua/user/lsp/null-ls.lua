@@ -13,12 +13,12 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier.with {
-      extra_filetypes = { "toml" },
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      extra_filetypes = { "svelte" },
+      extra_args = { "--single-quote", "--jsx-single-quote" },
     },
-    formatting.black.with { extra_args = { "--fast" } },
+    formatting.black,
     formatting.stylua,
-    formatting.google_java_format,
-    diagnostics.flake8,
+    diagnostics.eslint,
+    diagnostics.flake8.with { extra_args = { "--max-line-length=88" } },
   },
 }
