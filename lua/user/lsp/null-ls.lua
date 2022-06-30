@@ -16,6 +16,7 @@ null_ls.setup {
       extra_filetypes = { "svelte" },
       extra_args = { "--single-quote", "--jsx-single-quote" },
     },
+    formatting.isort,
     formatting.black,
     formatting.stylua,
     diagnostics.eslint,
