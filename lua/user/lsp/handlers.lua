@@ -10,6 +10,7 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 M.setup = function()
+  print("Enter setup")
   local icons = require "user.icons"
   local signs = {
 
@@ -28,6 +29,7 @@ M.setup = function()
     signs = {
       active = signs, -- show signs
     },
+    debug = true,
     update_in_insert = true,
     underline = true,
     severity_sort = true,
@@ -53,7 +55,7 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = false }  -- Set silent to false
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -61,7 +63,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+  keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
   keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
   keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
   keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -70,9 +72,11 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  print("Keymaps set: ", bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  print("Attaching: ", bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
@@ -81,7 +85,18 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
 
+  if client.name == "eslint_d" then
+    client.resolved_capabilities.document_formatting = false
+    print("eslint_d")
+  end
+
+  if client.name == "prettier" then
+    client.resolved_capabilities.document_formatting = true
+    print("prettier")
+  end
+
   lsp_keymaps(bufnr)
+  print("Keymaps called")
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
     return
