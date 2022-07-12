@@ -12,11 +12,14 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
-  "rust_analyzer",
   "taplo",
   "emmet_ls",
   "svelte"
 }
+
+if vim.loop.os_uname().sysname == "Linux" then
+  table.insert(servers, "rust_analyzer")
+end
 
 lsp_installer.setup()
 
