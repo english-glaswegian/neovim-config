@@ -2,7 +2,7 @@
 
 > Why does this repo exist?
 
-Liked the original idea of a stable neovim config that I could use for work as well as my own projects. However wanted to have my own colour scheme, laysout, a few more keymaps and a few extra plugins. Goal is, at least initially for use as a python, javascript, svelte and rust IDE. 
+Liked the original idea of a stable neovim config that I could use for work as well as my own projects. However wanted to have my own colour scheme, layout, a few more keymaps and a few extra plugins. Goal is, at least initially for use as a python, javascript, svelte and rust IDE. 
 
 
 
@@ -25,6 +25,7 @@ Liked the original idea of a stable neovim config that I could use for work as w
 - [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
+- [monokai.nvim](https://github.com/tanvirtin/monokai.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
@@ -44,3 +45,7 @@ Liked the original idea of a stable neovim config that I could use for work as w
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
 
+## Locally Added Plugins
+- [emmet-ls](https://github.com/aca/emmet-ls)
+
+---
