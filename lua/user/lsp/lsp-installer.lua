@@ -14,7 +14,8 @@ local servers = {
   "yamlls",
   "taplo",
   "emmet_ls",
-  "svelte"
+  "svelte",
+  "lemminx"
 }
 
 if vim.loop.os_uname().sysname == "Linux" then
@@ -54,6 +55,11 @@ for _, server in pairs(servers) do
   if server == "svelte" then
     local svelte_opts = require "user.lsp.settings.svelte"
     opts = vim.tbl_deep_extend("force", svelte_opts, opts)
+  end
+
+  if server == "lemminx" then
+    local lemminx_opts = require "user.lsp.settings.lemminx"
+    opts = vim.tbl_deep_extend("force", lemminx_opts, opts)
   end
 
   if server == "rust_analyzer" then
