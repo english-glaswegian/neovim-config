@@ -32,7 +32,7 @@ null_ls.setup({
 		formatting.isort,
 		formatting.black,
 		formatting.stylua,
-		diagnostics.eslint_d,  -- .with{ extra_filetypes = { "svelte" }, },
+		diagnostics.eslint_d,
 		diagnostics.flake8.with({ extra_args = { "--max-line-length=88" } }),
 	},
 })

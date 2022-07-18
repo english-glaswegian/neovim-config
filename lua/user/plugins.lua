@@ -56,6 +56,12 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
   use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+    commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96"
+  }
 
   -- Colorschemes
   use { "tanvirtin/monokai.nvim", commit="bff619d7a911cd8d8dcb5168db9ee6dfcc344934"}
