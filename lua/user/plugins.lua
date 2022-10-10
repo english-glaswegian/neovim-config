@@ -62,9 +62,11 @@ return packer.startup(function(use)
     ft = "markdown",
     commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96"
   }
+  use("folke/which-key.nvim")
 
   -- Colorschemes
-  use { "tanvirtin/monokai.nvim", commit="bff619d7a911cd8d8dcb5168db9ee6dfcc344934"}
+  -- use { "tanvirtin/monokai.nvim", commit="bff619d7a911cd8d8dcb5168db9ee6dfcc344934"}
+  use { "ofirgall/ofirkai.nvim", commit="49bb5406986c3ceaf10ab9f11bd0c5fcd7fa198a" }
   -- use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   -- use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
 

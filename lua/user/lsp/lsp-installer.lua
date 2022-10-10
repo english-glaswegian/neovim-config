@@ -68,7 +68,7 @@ for _, server in pairs(servers) do
 
     keymap("n", "<leader>rh", "<cmd>RustSetInlayHints<Cr>", key_opts)
     keymap("n", "<leader>rhd", "<cmd>RustDisableInlayHints<Cr>", key_opts)
-    keymap("n", "<leader>th", "<cmd>RustToggleInlayHints<Cr>", key_opts)
+    keymap("n", "<leader>rth", "<cmd>RustToggleInlayHints<Cr>", key_opts)
     keymap("n", "<leader>rr", "<cmd>RustRunnables<Cr>", key_opts)
     keymap("n", "<leader>rem", "<cmd>RustExpandMacro<Cr>", key_opts)
     keymap("n", "<leader>roc", "<cmd>RustOpenCargo<Cr>", key_opts)
