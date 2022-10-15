@@ -13,10 +13,18 @@ if not dap_install_status_ok then
   return
 end
 
+--[[ local dap_python_status_ok, dap_python = pcall(require, "dap-python")
+if not dap_python_status_ok then
+  return
+end ]]
+
 dap_install.setup {}
 
 dap_install.config("python", {})
 -- add other configs here
+
+-- dap_python.setup("~/.virtualenvs/debugpy/bin/python")
+-- dap_python.test_runner = "pytest"
 
 dapui.setup {
   sidebar = {

@@ -50,7 +50,7 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
+-- Move text up and down in normal mode
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
@@ -62,6 +62,9 @@ keymap("v", "p", '"_dP', opts)
 -- Toggle Term --
 keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opts)
 keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>ToggleTerm size=10,direction=float<cr>", opts)
+keymap("n", "th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opts)
+keymap("n", "tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", opts)
 
 -- Plugins --
 
@@ -92,3 +95,19 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+-- DAP Python
+--[[ keymap("n", "<leader>dn", "<cmd>lua require'dap-python'.test_method()<cr>", opts)
+keymap("n", "<leader>df", "<cmd>lua require'dap-python'.test_class()<cr>", opts)
+keymap("v", "<leader>ds", "<cmd>lua require'dap-python'debug_selection.()<cr>", opts) ]]
+
+-- Neotest
+keymap("n", "tr", "<cmd>lua require'neotest'.run.run()<CR>", opts)
+keymap("n", "td", "<cmd>lua require'neotest'.run.run({strategy = 'dap'})<CR>", opts)
+keymap("n", "ts", "<cmd>lua require'neotest'.run.stop()<CR>", opts)
+keymap("n", "ta", "<cmd>lua require'neotest'.run.attach()<CR>", opts)
+keymap("n", "tf", "<cmd>lua require'neotest'.run.run(vim.fn.expand('%'))<CR>", opts)
+keymap("n", "to", "<cmd>lua require'neotest'.output.open()<CR>", opts)
+keymap("n", "tm", "<cmd>lua require'neotest'.summary.toggle()<CR>", opts)
+keymap("n", "tn", "<cmd>lua require'neotest'.jump.next({ status='failed' })<CR>", opts)
+keymap("n", "tp", "<cmd>lua require'neotest'.jump.prev({ status='failed' })<CR>", opts)

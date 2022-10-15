@@ -20,5 +20,6 @@ require "user.indentline"
 require "user.alpha"
 require "user.lsp"
 require "user.dap"
+require "user.neotest"
 require "user.whichkey"
 vim.cmd("highlight Normal guibg = none") -- Set background to transparent

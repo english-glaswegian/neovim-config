@@ -116,6 +116,9 @@ local mappings = {
     l = { "<cmd>lua require'dap'.run_last()<cr>", "Run Last" },
     u = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
     t = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+    --[[ n = { "<cmd>lua require'dap-python'.test_method()<cr>", "Test Function/Method"},
+    f = { "<cmd>lua require'dap-python'.test_class()<cr>", "Test Class"},
+    s = { "<cmd>lua require'dap-python'debug_selection.()<cr>", "Debug Selection"} ]]
   },
 
   g = {
@@ -225,6 +228,19 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+  },
+
+  T = {
+    name = "Tests",
+    r = { "<cmd>lua require'neotest'.run.run()<CR>", "Run Nearest Test Function" },
+    f = { "<cmd>lua require'neotest'.run.run(vim.fn.expand('%'))<CR>", "Run Test File" },
+    d = { "<cmd>lua require'neotest'.run.run({strategy = 'dap'})<cr>", "Debug Test" },
+    s = { "<cmd>lua require'neotest'.run.stop()<cr>", "Stop Tests" },
+    a = { "<cmd>lua require'neotest'.run.attach()<cr>", "Attach To Nearest Test" },
+    o = { "<cmd>lua require'neotest'.output.open()<CR>", "Open Output" },
+    m = { "<cmd>lua require'neotest'.summary.toggle()<CR>", "Toggle Summary" },
+    n = { "<cmd>lua require'neotest'.jump.next({ status='failed' })<CR>", "Jump To Next Failure" },
+    p = { "<cmd>lua require'neotest'.jump.prev({ status='failed' })<CR>", "Jump To Previous Failure" }
   },
 }
 
